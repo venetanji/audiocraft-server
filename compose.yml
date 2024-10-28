@@ -1,0 +1,14 @@
+x-gpu: &x-gpu
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - capabilities: [gpu]
+
+services:
+  dev:
+    <<: *x-gpu
+    build: .
+    command: sleep infinity
+    volumes:
+      - ./server/:/app
