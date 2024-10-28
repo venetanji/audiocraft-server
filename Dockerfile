@@ -9,4 +9,4 @@ RUN pip install \
 WORKDIR /app
 RUN pip install fastapi uvicorn
 RUN git clone --depth 1 https://github.com/facebookresearch/audiocraft
-RUN pip install -r audiocraft/requirements.txt
+RUN pip install -r audiocraft/requirements.txt --use-deprecated=legacy-resolver
