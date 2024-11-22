@@ -26,7 +26,5 @@ async def generate_music(
     model.set_generation_params(duration=duration)
     wav = model.generate(descriptions)
     filename = output_dir / f"{uuid.uuid4()}"
-    print(filename)
     filename = audio_write(filename, wav[0].cpu(), model.sample_rate, strategy="loudness", loudness_compressor=True)
-    print(filename)
     return FileResponse(filename, media_type="audio/wav")
