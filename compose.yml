@@ -12,6 +12,7 @@ services:
     command: sleep infinity
     volumes:
       - ./server/:/app/server
+      - huggingface:/root/.cache/huggingface
     profiles:
       - dev
     # useful to run the gradio demo
@@ -24,5 +25,9 @@ services:
     command: uvicorn server.main:app --host 0.0.0.0
     volumes:
       - ./server/:/app/server
+      - huggingface:/root/.cache/huggingface
     ports:
       - 8000:8000
+
+volumes:
+  huggingface:
