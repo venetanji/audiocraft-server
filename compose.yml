@@ -8,7 +8,7 @@ x-gpu: &x-gpu
 services:
   dev:
     <<: *x-gpu
-    build: .
+    image: ghcr.io/venetanji/audiocraft-server:main
     command: sleep infinity
     volumes:
       - ./server/:/app/server
