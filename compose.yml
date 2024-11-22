@@ -11,4 +11,6 @@ services:
     build: .
     command: sleep infinity
     volumes:
-      - ./server/:/app
+      - ./server/:/app/server
+    ports:
+      - 7860:7860
